@@ -2,9 +2,7 @@ package admin;
 
 import java.io.IOException;
 import java.io.Reader;
-/*<<<<<<< HEAD*/
 import java.sql.SQLException;
-/*=======*/
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
