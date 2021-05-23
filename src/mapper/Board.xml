@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Board">
+	<resultMap id="BoardResult" type="Board">
+		<result property="board_num" column="board_num" />
+		<result property="board_id" column="board_id" />
+		<result property="board_title" column="board_title" />
+		<result property="board_content" column="board_content" />
+		<result property="board_file" column="board_file" />
+		<result property="board_count" column="board_count" />
+		<result property="reg_date" column="reg_date" />
+	</resultMap>
+	<insert id="insertBoard" parameterType="Board">
+		insert into board values(#{board_id}, #{board_password}, #{board_title}, #{board_content}, #{reg_date})
+	</insert>
+</mapper>

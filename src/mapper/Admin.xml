@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Admin">
+	<resultMap id="AdminResult" type="Admin">
+		<result property="adminId" column="adminId" />
+		<result property="adminPasswd" column="adminPasswd" />
+	</resultMap>
+	
+	<select id="selectByAdmin" parameterType="java.lang.String">
+		select adminPasswd from admin where adminId = #{adminId}
+	</select>
+	
+	<delete id="AdminDeleteBoard" parameterType="java.lang.String">
+		delete board where board_title=#{board_title}
+	</delete>
+</mapper>
+
+

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Member">
+	<resultMap id="MemberResult" type="Member">
+		<result property="id" column="id" />
+		<result property="passwd" column="passwd" />
+		<result property="name" column="name" />
+		<result property="reg_date" column="reg_date" />
+		<result property="tel" column="tel" />
+		<result property="address" column="address" />
+	</resultMap>
+	
+	<select id="selectById" resultType="Member" parameterType="java.lang.String">
+		select * from marketMember where id = #{id}
+	</select>
+	
+	<insert id="insertMember" parameterType="Member">
+		insert into marketMember values(#{id}, #{passwd}, #{name}, sysdate, #{tel}, #{address})
+	</insert>
+	
+	<!--(list)회원 리스트 조회-->
+	<select id="selectListAll" resultMap="MemberResult">
+			select * from marketMember	
+	</select>
+	
+	<!--(list)회원 삭제-->
+	<delete id="deleteMember" parameterType="java.lang.String">
+		delete from marketMember where id = #{id}
+	</delete>
+	
+	<!--(list)체크박스 회원 삭제-->
+	<delete id="chkdeleteMember" parameterType="java.lang.String">
+		delete from marketMember where id = #{id}
+	</delete>
+	
+	<!--(view)회원 id 선택시 이름으로 전체 조회 -->
+	<select id="selectByName" resultType="Member" parameterType="java.lang.String">
+			select * from marketMember where name = #{name}
+	</select>
+	
+	<!--맴버 로그인-->
+	<select id="selectByMember" resultType="java.lang.String">
+		select passwd from marketMember where id = #{id}
+	</select>
+	
+	<delete id="remove">
+		delete from marketMember where id = #{id} and passwd = #{passwd}
+	</delete>
+</mapper>

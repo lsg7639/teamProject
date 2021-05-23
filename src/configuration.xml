@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+	PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<properties resource="dbconnect.properties" />
+	<typeAliases>
+		<typeAlias type="admin.Admin" alias="Admin" />
+		<typeAlias type="member.model.Member" alias="Member" />
+		<typeAlias type="board.model.Board" alias="Board" />
+	</typeAliases>
+	<environments default="development">
+		<environment id="development">
+			<transactionManager type="JDBC" />
+			<dataSource type="POOLED">
+				<property name="driver" value="${driver}" />
+				<property name="url" value="${url}" />
+				<property name="username" value="${username}" />
+				<property name="password" value="${password}" />
+			</dataSource>
+		</environment>
+	</environments>
+	<mappers>
+		<mapper resource="/mapper/Admin.xml" />
+		<mapper resource="/mapper/Member.xml" />
+		<mapper resource="/mapper/Board.xml" />
+	</mappers>
+</configuration>
