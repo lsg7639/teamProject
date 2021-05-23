@@ -13,9 +13,16 @@
 	int result = member.delete(id);
 	if(result > 0){
 		response.sendRedirect("manage_list.jsp");
-	}else{	
+	
 %>
+<%-- <script type="text/javascript">   
+	alert("<%=member %> 회원정보 삭제 완료");
+	location.href = 'manage_list.jsp';
+</script> --%>
 
+
+
+<%}else{	 %>
 <script type="text/javascript">
 	alert("회원 정보 삭제 되지 않았습니다.")
 	history.go(-1);

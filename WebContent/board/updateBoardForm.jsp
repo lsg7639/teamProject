@@ -9,7 +9,7 @@
 <script type="text/javascript">
 
 	function Submit(){
-		if(confirm("작성하신 글을 등록하시겠습니까?")){
+		if(confirm("작성하신 글을 수정 하시겠습니까?")){
 			return true;
 		}return false;
 	}
@@ -28,8 +28,8 @@
 </head>
 <body>
 	<div align="center">
-	<h3>[게시판 글쓰기]</h3>
-	<form action="joinBoard.jsp" method="post" name="regForm" onsubmit="return Submit()" onreset="return Reset()">
+	<h3>[게시판 내용 수정]</h3>
+	<form action="updateBoard.jsp" method="post" name="regForm" onsubmit="return Submit()" onreset="return Reset()">
 		<table border="1">
 			<tr>
 				<th>작성자</th>
@@ -52,8 +52,9 @@
 			</tr>
 			<tr align="center">
 				<td colspan="2">
-					<input type="submit" value="등록"/>
 					<input type="button" value="글 목록" onclick="location.href='boardList.jsp'" />
+					<input type="submit" value="수정"/>
+					<input type="button" value="삭제" onclick="location.href=' .jsp'"/>
 				</td>
 			</tr>
 		</table>

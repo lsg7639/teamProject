@@ -18,35 +18,40 @@
 	if(member !=null){ 
 %>
 
-<h2>[관리자] 회원 상세 정보</h2>
-<table border="1" width="300px" text-align= "center">
+<h2 align="center">[관리자] 회원 상세 정보</h2>
+<table border="1" width="50%"  align="center">
 	<tr>
-		<th width="25%">id </th>
-		<td><%=member.getId()%></td>
-	</tr>		
-	<tr>
-		<th width="25%">password</th>
-		<td> <%=member.getPasswd() %></td>
-	</tr>	
-	<tr>
-		<th width="25%">이름</th>
-		<td> <%=member.getName()%></td>
-	</tr>	
-	<tr>
-		<th width="25%">가입일</th>
-		<td><%=member.getReg_date() %></td>
-	</tr>	
-	<tr>
-		<th width="25%">연락처</th>
-		<td><%=member.getTel() %></td>
+		<th colspan="2" bgcolor="#EAB1D4"> 회원 상세정보 </th>
 	</tr>
 	<tr>
-		<th width="25%">주소</th>
-		<td><%=member.getAddress() %></td>
+		<th width="20%">id </th>
+		<td align="center"><%=member.getId()%></td>
+	</tr>		
+	<tr>
+		<th width="20%">password</th>
+		<td align="center"> <%=member.getPasswd() %></td>
+	</tr>	
+	<tr>
+		<th width="20%">이름</th>
+		<td align="center"> <%=member.getName()%></td>
+	</tr>	
+	<tr>
+		<th width="20%">가입일</th>
+		<td align="center"><%=member.getReg_date() %></td>
+	</tr>	
+	<tr>
+		<th width="20%">연락처</th>
+		<td align="center"><%=member.getTel() %></td>
+	</tr>
+	<tr>
+		<th width="20%">주소</th>
+		<td align="center"><%=member.getAddress() %></td>
 </table>
 <%} else {out.print("회원 정보가 없습니다.");} %>
 <br/>
-	<input type="button" value="회원 조회" onclick="location.href='manage_list.jsp'" />
-	<input type="button" value="회원 삭제" onclick="location.href='manage_delete.jsp?id=<%=member.getId()%>'"/>
+<div align="center">
+	<input type="button" value="회원 조회"  onclick="location.href='manage_list.jsp'" />
+	<input type="button" value="회원 삭제" onclick="location.href='manage_delete.jsp?id=<%=member.getId()%>'" />
+</div>	
 </body>
 </html>

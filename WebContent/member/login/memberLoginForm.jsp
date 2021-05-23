@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>관리자 로그인</title>
+<title>회원 로그인</title>
 <script type="text/javascript">
 	function chk() {
 		if (!form1.id.value) {

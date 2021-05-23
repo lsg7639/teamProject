@@ -51,4 +51,8 @@ public class BoardDao {
 		return session.insert("insertBoard", board);
 	}
 
+	/* 게시판 글 수정 */
+	public int update (Board board) {
+		return session.update("updateBoard", board);
+	}
 }
