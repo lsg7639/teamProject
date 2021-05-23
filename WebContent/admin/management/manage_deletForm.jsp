@@ -10,13 +10,13 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>[관리자 모드] 회원 삭제 </h1>
+<h1 align="center">[관리자 모드] 회원 삭제 </h1>
 <form action="manage_delete.jsp" method="post" id="checkForm">
-<table border="1" width="700px" >
+<table border="1" width="100%"  >
 
-		<tr bgcolor="#d396d3">	
+		<tr bgcolor="#d396d3"  >	
 			<th><input type="checkbox" id="allcheck" class="check" /></th>
-			<th>id  &nbsp;</th>
+			<th >id  &nbsp;</th>
 			<th>password  &nbsp;</th>
 			<th>이름  &nbsp;</th>
 			<th>가입일  &nbsp;</th>
@@ -31,13 +31,14 @@
 	for(Member member : list){	
 %>	
 	<tr>
-		<th><input type="checkbox" id="allcheck" /></th>
-		<td><a href="listDetailView.jsp?name=<%=member.getName()%>"><%=member.getId()%></a></td>
-		<td><%=member.getPasswd() %></td>
-		<td><%=member.getName()%></td>
-		<td><%=member.getReg_date() %></td>
-		<td><%=member.getTel() %></td>
-		<td><%=member.getAddress() %></td>			
+		<th ><input type="checkbox" id="allcheck" name="checkRow" value="${content.IDX}" />
+		<td align="center" name="checkRow"><a href="listDetailView.jsp?name=<%=member.getName()%>"><%=member.getId()%></a></td>
+		<td align="center" name="checkRow"><%=member.getPasswd() %></td>
+		<td align="center" name="checkRow"><%=member.getName()%></td>
+		<td align="center" name="checkRow"><%=member.getReg_date() %></td>
+		<td align="center" name="checkRow"><%=member.getTel() %></td>
+		<td align="center" name="checkRow"><%=member.getAddress() %></td>			
+		</th>	
 	</tr>
 
 <%} %>
@@ -45,8 +46,10 @@
 
 </table>
 <p>
-<input type="button" value="취소" onclick="location.href='manage_list.jsp'" >
-<input type="button" value="삭제" onclick="location.href='mamage_chkDelete.jsp'">
+<div align="center">
+<input type="button" value="취소" onclick="location.href='manage_list.jsp'"  >
+<input type="button" value="삭제" onclick="location.href='mamage_chkboxDelete.jsp'" >
+</div>
 </form>		
 
 

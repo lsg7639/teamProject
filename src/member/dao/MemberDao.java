@@ -64,6 +64,12 @@ public class MemberDao {
 	public int chk_delete(String id) {
 		return session.delete("chkdeleteMember", id);
 	}
+	
+//	String[] arrIdx = paramMap.get("idx").toString().split(",");
+//	for (int i=0; i<arrIdx.length; i++) {
+//	    testMapper.delete(Integer.parseInt(arrIdx[i]));
+//	}
+	
 
 	/* (view) 회원 id 선택시 이름으로 전체 조회 */
 	public Member select(String name) throws SQLException {

@@ -12,8 +12,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>[관리자] 회원 목록</h1>
-<table border="1" width="700px" >
+<h1 align="center">[관리자] 회원 목록</h1>
+<table border="1" width="100%" >
 		<tr  bgcolor="#d396d3">
 			<th>id  &nbsp;</th>
 			<th>password  &nbsp;</th>
@@ -30,21 +30,22 @@
 	for(Member member : list){	
 %>	
 	<tr>
-		<td><a href="listDetailView.jsp?name=<%=member.getName()%>"><%=member.getId()%></a></td>
-		<td><%=member.getPasswd() %></td>
-		<td><%=member.getName()%></td>
-		<td><%=member.getReg_date() %></td>
-		<td><%=member.getTel() %></td>
-		<td><%=member.getAddress() %></td>
+		<td align="center"><a href="listDetailView.jsp?name=<%=member.getName()%>"><%=member.getId()%></a></td>
+		<td align="center"><%=member.getPasswd() %></td>
+		<td align="center"><%=member.getName()%></td>
+		<td align="center"><%=member.getReg_date() %></td>
+		<td align="center"><%=member.getTel() %></td>
+		<td align="center"><%=member.getAddress() %></td>
 	</tr>
 	
 
 <%} %>
 </table>
 <br>
+<div align="center">
 	<span><button><a  href="../adminMain.jsp">HOME</a ></button></span>
 	<span><button><a href="manage_deletForm.jsp">삭제</a></button></span>
-
+</div>
 </body>
 </html>
 
