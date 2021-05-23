@@ -45,7 +45,8 @@
 		select passwd from marketMember where id = #{id}
 	</select>
 	
+	<!-- 회원탈퇴 -->
 	<delete id="remove">
-		delete from marketMember where id = #{id} and passwd = #{passwd}
+		delete from marketMember where id = #{id} 
 	</delete>
 </mapper>
