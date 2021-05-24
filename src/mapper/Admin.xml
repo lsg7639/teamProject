@@ -12,8 +12,6 @@
 		select adminPasswd from admin where adminId = #{adminId}
 	</select>
 	
-	
-	
 	<update id="updateAdminBoard" parameterType="board">
 		update board
 		set
@@ -21,7 +19,6 @@
 		board_content = #{board_content},
 		reg_date = #{reg_date}
 		where id = #{adminId}
-		
 	</update>
 	
 	<delete id="deleteAdminBoard" parameterType="java.lang.String">
