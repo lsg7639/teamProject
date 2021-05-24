@@ -12,9 +12,23 @@
 		select adminPasswd from admin where adminId = #{adminId}
 	</select>
 	
-	<delete id="AdminDeleteBoard" parameterType="java.lang.String">
-		delete board where board_title=#{board_title}
+	
+	
+	<update id="updateAdminBoard" parameterType="board">
+		update board
+		set
+		board_title = #{board_title},
+		board_content = #{board_content},
+		reg_date = #{reg_date}
+		where id = #{adminId}
+		
+	</update>
+	
+	<delete id="deleteAdminBoard" parameterType="java.lang.String">
+		delete from board where board_title=#{board_title}
 	</delete>
+	
+	
 </mapper>
 
 
