@@ -55,4 +55,9 @@ public class BoardDao {
 	public int update (Board board) {
 		return session.update("updateBoard", board);
 	}
+	
+	/* 게시판 글 삭제 */
+	public int delete (Board board) {
+		return session.delete("deleteBoard", board);
+	}
 }

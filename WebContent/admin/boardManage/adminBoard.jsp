@@ -5,6 +5,8 @@
     pageEncoding="UTF-8"%>
 <%@page import="member.dao.MemberDao"%>
 <%@page import="member.model.Member"  %>   
+<!-- 관리자 로그인이 되어있는지 체크 -->
+<%@ include file="../adminSessionChk.jsp" %>
   
 <%
 	if((session.getAttribute("adminId")== null) || (!((String)session.getAttribute("adminId")).equals("admin"))){
@@ -35,7 +37,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>관리자 모드</title>ㅋ
+<title>관리자 모드</title>
 </head>
 <body>
 	<h2 align="center">게시판 목록</h2>

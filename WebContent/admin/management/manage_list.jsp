@@ -4,7 +4,8 @@
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
+<!-- 관리자 로그인이 되어있는지 체크 -->
+<%@ include file="../adminSessionChk.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>

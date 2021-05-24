@@ -6,3 +6,4 @@
        response.sendRedirect(path+"/admin/logon/adminLoginForm.jsp");
 	} 
 %>
+	

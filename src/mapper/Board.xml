@@ -15,4 +15,8 @@
 	<insert id="insertBoard" parameterType="Board">
 		insert into board values(#{board_id}, #{board_password}, #{board_title}, #{board_content}, #{reg_date})
 	</insert>
+	
+	<delete id="deleteBoard" parameterType="java.lang.String">
+		delete board where id = #{id}
+	</delete>
 </mapper>

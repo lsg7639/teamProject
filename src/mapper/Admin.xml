@@ -8,7 +8,7 @@
 		<result property="adminPasswd" column="adminPasswd" />
 	</resultMap>
 	
-	<select id="selectByAdmin" parameterType="java.lang.String">
+	<select id="selectByAdmin" resultType="String">
 		select adminPasswd from admin where adminId = #{adminId}
 	</select>
 	
