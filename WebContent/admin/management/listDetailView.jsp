@@ -50,7 +50,7 @@
 <%} else {out.print("회원 정보가 없습니다.");} %>
 <br/>
 <div align="center">
-	<input type="button" value="회원 조회"  onclick="location.href='manage_list.jsp'" />
+	<input type="button" value="회원 목록"  onclick="location.href='manage_list.jsp'" />
 	<input type="button" value="회원 삭제" onclick="location.href='manage_delete.jsp?id=<%=member.getId()%>'" />
 </div>	
 </body>

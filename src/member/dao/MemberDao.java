@@ -41,7 +41,7 @@ public class MemberDao {
 	}
 
 	// id로 회원 정보 가져오기 - id 중복 확인 등에 사용
-	public Member selectById(String id) {
+	public Member selectById(String id) throws SQLException {
 		return (Member) session.selectOne("selectById", id);
 	}
 
@@ -60,22 +60,15 @@ public class MemberDao {
 		return session.delete("deleteMember", id);
 	}
 
-	/* (list) 회원 체크 삭제 */
-	public int chk_delete(String id) {
-		return session.delete("chkdeleteMember", id);
-	}
-	
-//	String[] arrIdx = paramMap.get("idx").toString().split(",");
-//	for (int i=0; i<arrIdx.length; i++) {
-//	    testMapper.delete(Integer.parseInt(arrIdx[i]));
-//	}
-	
-
 	/* (view) 회원 id 선택시 이름으로 전체 조회 */
 	public Member select(String name) throws SQLException {
 		return (Member) session.selectOne("selectByName", name);
 	}
 
+	public int updateMemberMyPage(Member member) {
+		return session.update("updateMemberMyPage", member);
+	}
+	
 	/* 로그인 */
 	public int memberCheck(String id, String passwd) {
 		int x = -1;
@@ -90,11 +83,6 @@ public class MemberDao {
 			x = -1; // 해당 아이디 없음
 		}
 		return x;
-	}
-
-	// 회원탈퇴
-	public int delete1(String id) {
-		return session.delete("remove", id);
 	}
 
 }

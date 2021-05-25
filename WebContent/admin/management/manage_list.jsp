@@ -44,8 +44,7 @@
 </table>
 <br>
 <div align="center">
-	<span><button><a  href="../adminMain.jsp">HOME</a ></button></span>
-	<span><button><a href="manage_deletForm.jsp">삭제</a></button></span>
+	<span><button><a href="../adminMain.jsp">HOME</a></button></span>
 </div>
 </body>
 </html>

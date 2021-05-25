@@ -7,6 +7,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
@@ -52,12 +53,32 @@ public class BoardDao {
 	}
 
 	/* 게시판 글 수정 */
-	public int update (Board board) {
+	public int update(Board board) {
 		return session.update("updateBoard", board);
+	}
+
+	/* 게시판 글  글제목 받아서 수정 */
+	public Board selectBoard(String board_title) throws SQLException {
+		return (Board) session.selectOne("selectByboard_title", board_title);
 	}
 	
 	/* 게시판 글 삭제 */
-	public int delete (Board board) {
+	public int delete(Board board) {
 		return session.delete("deleteBoard", board);
+	}
+
+	/* 관리자가 게시판 조회 */
+	public List<Board> selectBoardList() throws SQLException {
+		return session.selectList("selectBoardList");
+	}
+
+	/* 게시판 목록 조회 */
+	public List<Board> selectAll() throws SQLException{
+		return session.selectList("selectAll");
+	}
+
+	/* 관리자가 게시판 삭제 */
+	public int deleteBoardList(String title) {
+		return session.delete("deleteBoardList", title);
 	}
 }

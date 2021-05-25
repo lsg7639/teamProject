@@ -1,47 +1,55 @@
+<%@page import="member.model.Member"%>
+<%@page import="member.dao.MemberDao"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-    
-    
-    
-    
+	pageEncoding="UTF-8"%>
+<%-- <%@ include file="login/memberSessionChk.jsp"%> --%>
+
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
+
 <title>마이페이지</title>
+<%
+	String id = request.getParameter("id");
+	MemberDao md = MemberDao.getInstance();
+	Member member = md.selectById(id);
+	session.setAttribute("Member", member);
+	if (member != null) {
+%>
 </head>
 <body>
-<form action="update.jsp" method="post">
-            <tr>
-                <td>아이디</td>
-                <td>
-                    <input type="text" name="userId" value="${member.id }" readonly="readonly"/>
-                </td>
-            </tr><br />
-            <tr>
-                <td>패스워드</td>
-                <td>
-                    <input type="text" name="pass" required="required" />
-                </td>
-            </tr><br />
-            
-        <tr>
-            <td colspan="2">
-                <input type="submit" value="수정" /> <br />
-                <a href="./">로그아웃</a><br />
-                <a href="./deleteMember?Id=${member.id}">회원탈퇴</a>
-            </td>
-        </tr>
-    </form>
-</table>
+		<table border="1" width="50%" align="center">
+			<tr>
+				<th colspan="2" bgcolor="#EAB1D4">마이 페이지</th>
+			</tr>
+			<tr>
+				<th width="20%">id</th>
+				<td align="center"><%=member.getId()%></td>
+			</tr>
+			<tr>
+				<th width="20%">password</th>
+				<td align="center"><%=member.getPasswd()%></td>
+			</tr>
+			<tr>
+				<th width="20%">이름</th>
+				<td align="center"><%=member.getName()%></td>
+			</tr>
+			<tr>
+				<th width="20%">가입일</th>
+				<td align="center"><%=member.getReg_date()%></td>
+			</tr>
+			<tr>
+				<th width="20%">연락처</th>
+				<td align="center"><%=member.getTel()%></td>
+			</tr>
+			<tr>
+				<th width="20%">주소</th>
+				<td align="center"><%=member.getAddress()%></td>
+		</table>
+		<%} else {out.print("회원 정보가 없습니다.");}%>
+	<div align="center">
+		<input type="button" value="수정" onclick="location.href='updateMemberForm.jsp?id=<%=member.getId()%>'" />
+		<input type="button" value="회원탈퇴" onclick="location.href='deleteMember.jsp?id=<%=member.getId()%>'" />
+	</div>
 </body>
-<script>
-    //하나로 넘어올경우 변수에 담을 수 있다.
-    var msg = "${msg}";
-    
-    if(msg != ""){
-        alert(msg);
-    }
-</script>
-
 </html>

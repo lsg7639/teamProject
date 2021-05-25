@@ -20,12 +20,4 @@
 		reg_date = #{reg_date}
 		where id = #{adminId}
 	</update>
-	
-	<delete id="deleteAdminBoard" parameterType="java.lang.String">
-		delete from board where board_title=#{board_title}
-	</delete>
-	
-	
 </mapper>
-
-

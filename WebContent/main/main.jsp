@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,9 +10,11 @@
     <!-- 폰트 -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
-
-    <!-- css -->
+    <!-- css연결 -->
     <link rel="stylesheet" href="../css/main.css">
+  <%--  <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/main.css"> --%>
+     <link href="<%= request.getContextPath() %>../../css/main.css" rel="stylesheet">
+
     <title>MarketKurly</title>
 </head>
 <body>
@@ -19,16 +23,16 @@
         <div id="header">
             <div id="userMemu"> 
                 <ul class="list_menu">
-                 <li class="join"><a href="#none">회원가입</a></li>
-                 <li class="login"><a href="#none">로그인</a></li>
-                 <li class="info"><a href="#none" class="info_list"> 고객센터</a>
+                 <li class="join"><a href="../member/join/joinForm.jsp">회원가입</a></li>
+                 <li class="login"><a href="../member/login/memberLoginForm.jsp">로그인</a></li>
+                 <li class="info"><a href="../board/boardList.jsp" class="info_list"> 고객센터</a>
                     <img src="../image/icon/ico_down_8x5.png" alt="dropicon" class="drop_icon"> 
                     <ul class="link_list">
-                        <li><a href="">공지사항</a></li>
-                        <li><a href="">자주하는 질문</a></li>
-                        <li><a href="">1:1문의</a></li>
-                        <li><a href="">상품제안</a></li>
-                        <li><a href="">에코포장 피드백</a></li>
+                        <li><a href="../board/boardList.jsp">공지사항</a></li>
+                        <li><a href="../board/boardList.jsp">자주하는 질문</a></li>
+                        <li><a href="../board/boardList.jsp">1:1문의</a></li>
+                        <li><a href="../board/boardList.jsp">상품제안</a></li>
+                        <li><a href="../board/boardList.jsp">에코포장 피드백</a></li>
                     </ul>
                  </li>
                 </ul>    
@@ -38,7 +42,7 @@
           <div id="headerLogo">
             <div class="mainlogo">
                  <h1 class="logo">
-                    <a href="/" class="link_main">
+                    <a href="main.jsp" class="link_main">
                         <span id="gnbLogoContainer"></span>
                         <img src="../image/logo/cat_logo_small.png" alt="마켓컬리 로고" class="market_logo">
                      </a>

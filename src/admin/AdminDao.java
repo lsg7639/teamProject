@@ -69,8 +69,6 @@ public class AdminDao {
 		return session.selectList("selectAllfromMember");
 	}
 
-	
-	
 	/* 관리자 게시판 수정 */
 	public int updateAdminBoard(Board board) {
 		return session.update("updateAdminBoard",board);

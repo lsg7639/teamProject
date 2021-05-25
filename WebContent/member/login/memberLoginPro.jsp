@@ -9,7 +9,7 @@
 	int check = member.memberCheck(id, passwd);
 	if (check == 1) {
 		session.setAttribute("id", id);
-		response.sendRedirect("memberLoginMain.jsp");
+		response.sendRedirect("../../main/main_Login.jsp");
 	} else if (check == 0) {
 %>
 	<script>

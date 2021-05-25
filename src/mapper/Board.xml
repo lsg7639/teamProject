@@ -8,15 +8,38 @@
 		<result property="board_id" column="board_id" />
 		<result property="board_title" column="board_title" />
 		<result property="board_content" column="board_content" />
-		<result property="board_file" column="board_file" />
-		<result property="board_count" column="board_count" />
 		<result property="reg_date" column="reg_date" />
 	</resultMap>
 	<insert id="insertBoard" parameterType="Board">
-		insert into board values(#{board_id}, #{board_password}, #{board_title}, #{board_content}, #{reg_date})
+		insert into board(board_num, board_id, board_title, board_content, reg_date) 
+		values(board_num.nextval, #{board_id}, #{board_title}, #{board_content}, sysdate)
 	</insert>
-	
+
 	<delete id="deleteBoard" parameterType="java.lang.String">
 		delete board where id = #{id}
 	</delete>
+
+	<select id="selectBoardList" resultMap="BoardResult">
+		select board_id, board_title, reg_date from board
+	</select>
+
+	<select id="selectAll" resultMap="BoardResult">
+		select board_num, board_title, board_id, reg_date from board
+	</select>
+
+	<delete id="deleteBoardList" parameterType="java.lang.String">
+		delete from board where board_title = #{board_title}
+	</delete>
+
+	<select id="selectByboard_title" resultType="Board" parameterType="java.lang.String">
+		select board_num, board_id, board_title, board_content, reg_date from board where board_title = #{board_title}
+	</select>
+
+	<update id="updateBoard" parameterType="Board">
+		update board
+		set
+		board_title=#{board_title},
+		board_content=#{board_content}
+		where board_id=#{board_id}
+	</update>
 </mapper>

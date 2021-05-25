@@ -1,28 +1,22 @@
 create table board(
-    board_num number(3) primary key, --ê¸€ë²ˆí˜¸
-    board_id varchar2(20), --ì‘ì„±ìì•„ì´ë””
-    board_password varchar2(4),
-    board_title varchar2(100), --ê¸€ì œëª©
-    board_content varchar2(2000), --ê¸€ë‚´ìš©
-    board_file varchar2(100), --ì²¨ë¶€íŒŒì¼ ì´ë¦„
-    board_count number, --ì¡°íšŒìˆ˜
-    reg_date date --ë“±ë¡ì¼ 
+    board_num number(3) primary key, --±Û¹øÈ£
+    board_id varchar2(20), --ÀÛ¼ºÀÚ¾ÆÀÌµğ
+    board_title varchar2(100), --±ÛÁ¦¸ñ
+    board_content varchar2(2000), --±Û³»¿ë
+    reg_date date, --µî·ÏÀÏ 
+    foreign key(board_id) REFERENCES marketMember(id) on delete cascade
 );
 
-insert into board values(
-board_num_seq.nextval,
-"bb",
-"bb",
-"í…ŒìŠ¤íŠ¸ ì œëª©",
-"~~~í…ŒìŠ¤íŠ¸ ë‚´ìš©~~~",
-".jpg",
-sysdate
-);
+select * from board;
 
+desc board;
+
+insert into board values (board_num.nextval,'aa','asd','asd',sysdate);
 
 drop table board;
 
 create sequence board_num;
+drop sequence board_num;
 
 commit;
 

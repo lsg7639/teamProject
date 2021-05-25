@@ -6,7 +6,7 @@ create table admin (
 );
 
 insert into admin values ('admin','admin');
-delete from admin where adminId = 'admin';
+delete admin where adminId = 'admin';
 
 select * from admin;
 select RPAD(adminPasswd, 12, '*') from admin where adminId = 'admin';
@@ -25,5 +25,6 @@ create table marketMember (
 
 insert into marketMember(id, passwd, name, tel, address) values('aa', 'aa', 'aa', '9010', 'sss'); 
 select * from marketMember;
+delete from marketMember where id = 'vv';
 
 commit;
